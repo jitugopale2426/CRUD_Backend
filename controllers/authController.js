@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const RegisterController = async(req,res)=>{
-    try {
         const {name,email,password} = req.body;
 
         if(!name || !email || !password){
@@ -33,9 +32,7 @@ export const RegisterController = async(req,res)=>{
         })
 
         return res.status(201).json({message:"User Created Successfully",user})
-    } catch (error) {
-        return res.status(500).json({message:"Internal Server Error"})
-    }
+ 
 }
 
 export const LoginController = async(req,res)=>{
